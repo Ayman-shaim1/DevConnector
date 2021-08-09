@@ -30,6 +30,7 @@ if (process.env.NODE_ENV === "production") {
 } else {
   app.get("/", (req, res) => res.send("API Running ..."));
 }
+
 // Init Error Middlewares :
 app.use(notFound);
 app.use(errorHandler);
