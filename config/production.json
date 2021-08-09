@@ -1,0 +1,6 @@
+{
+    "mongoURI": "mongodb+srv://ayman123:ayman123@devconnector.n4hpo.mongodb.net/DevConnector?retryWrites=true&w=majority",
+    "JWT_SECRET": "++secret--key++",
+    "githubClientId": "446198e1b3a10a92c2c4",
+    "githubSecret":"58943a6231ffb2c8a0c120714a595f32880b198b"
+}   
