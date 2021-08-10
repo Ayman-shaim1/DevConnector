@@ -16,6 +16,11 @@ connectDB();
 // Init Middlewares
 app.use(express.json({ extended: false }));
 
+// Define Routes :
+app.use("/api/users", usersRoutes);
+app.use("/api/profiles", profileRoutes);
+app.use("/api/posts", postsRoutes);
+
 if (process.env.NODE_ENV === "production") {
   //Set static folder :
   app.use(express.static(path.resolve(__dirname, "client", "build")));
@@ -25,11 +30,6 @@ if (process.env.NODE_ENV === "production") {
 } else {
   app.get("/", (req, res) => res.send("API Running ..."));
 }
-
-// Define Routes :
-app.use("/api/users", usersRoutes);
-app.use("/api/profiles", profileRoutes);
-app.use("/api/posts", postsRoutes);
 
 // Init Error Middlewares :
 app.use(notFound);
