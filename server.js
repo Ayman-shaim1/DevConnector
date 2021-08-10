@@ -1,6 +1,7 @@
 import colors from "colors";
 import express from "express";
 import path from "path";
+import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import { notFound, errorHandler } from "./middlewares/errorMiddleware.js";
 
@@ -10,8 +11,11 @@ import profileRoutes from "./routes/profileRoutes.js";
 import postsRoutes from "./routes/postsRoutes.js";
 
 const app = express();
+const __dirname = path.resolve();
 // Connect DataBase :
 connectDB();
+
+dotenv.config();
 
 // Init Middlewares
 app.use(express.json({ extended: false }));
@@ -40,3 +44,5 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () =>
   console.log(`Server stared on port ${PORT}`.yellow.bold)
 );
+
+console.log(process.env.NODE_ENV);
